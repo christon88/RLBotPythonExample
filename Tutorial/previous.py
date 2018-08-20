@@ -4,6 +4,10 @@ import math
 import time
 
 
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2+(y2-y1)**2)
+
+
 class TutorialBot(BaseAgent):
     def __init__(self, name, team, index):
         super().__init__(name, team, index)
@@ -11,6 +15,7 @@ class TutorialBot(BaseAgent):
 
         # Constants
         self.DODGE_TIME = 0.2
+        self.DISTANCE_TO_DODGE = 500
 
         # Game values
         self.bot_pos = None
